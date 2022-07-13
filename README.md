@@ -1,7 +1,7 @@
 This readme is just for test purpose.
 
 
-- Main idea
+- How notebook is structured
 	```mermaid 
     flowchart TB
         subgraph Main[Processing dataset and ML algorithms]
@@ -34,22 +34,21 @@ This readme is just for test purpose.
 		SUB_D --> |metrics| Support
 	```
 
-- Custom functions
+- Module: Custom functions
 	```mermaid 
     flowchart TB
 
 		subgraph SUB_A [Custom functions]
 			direction TB;
 			A1[Feature transform] --> A2[Feature Engineering];
-			A2 --> A3[Feature selection]
-			A3 --> A4[Outlier transform]
-			A3 --> A5[Outlier transform]
-			A4 --> A5[Missing data imputation]
+			A2 --> A3[Feature selection]			
+			A3 --> A4[Missing data imputation]
+			A4 --> A5[Outlier transform]			
 			A5 --> A6[Target transform]
 		end            
 			
 			
-- Finding a candidate
+- Module: Finding a candidate
 	```mermaid 
     flowchart TB
 		subgraph SUB_B [Finding a candidate]
@@ -57,18 +56,18 @@ This readme is just for test purpose.
 			B1[Feature Models] --> |setup + compare_models| B2[Initial CV];
 		end
 
-- Tuning a model
+- Module: Tuning a model
 	```mermaid 
     flowchart TB
 		subgraph SUB_C [Tuning a model]
 			direction TB;          
-			C1[base model] --> |setup| C2[CV-base]
+			C1[base model] --> |setup + compare_models| C2[CV-base]
 			C2 --> |tune| C3[CV - Optimized]
 			C3 --> |Blend|C4[CV-Blend]
 			C3 --> |Stack|C5[CV-Stack]
 		end
 
-- Finalizing a model
+- Module: Finalizing a model
 	```mermaid 
     flowchart TB
 		subgraph SUB_D [Finalizing a model]
@@ -77,7 +76,7 @@ This readme is just for test purpose.
 			D2 --> |final adjusts| D3[Submission File]
 		end
 
-- Analyzing models
+- Module: Analyzing models
 	```mermaid 
     flowchart TB
 
